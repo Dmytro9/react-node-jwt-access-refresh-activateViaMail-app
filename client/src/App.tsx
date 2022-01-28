@@ -34,13 +34,16 @@ const App: FC = () => {
         <LoginForm />
         <button onClick={getUsers}>Get Users</button>
       </div>
-    )
+    );
   }
 
   return (
     <div>
       <h1>
         {store.isAuth ? `User is authorized ${store.user.email}` : "Log in"}
+      </h1>
+      <h1>
+        {store.user.isActivated ? "Account activated" : "Acivate your account"}
       </h1>
       <button onClick={() => store.logout()}>Log out</button>
       <div>
